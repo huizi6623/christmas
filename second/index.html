@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圣诞情缘</title>
+    <link rel="stylesheet" href="css/common.css"/>
+    <link rel="stylesheet" href="css/pageA.css"/>
+    <link rel="stylesheet" href="css/pageB.css"/>
+    <link rel="stylesheet" href="css/pageC.css"/>
+</head>
+
+<body>
+<section class="container">
+    <section class="page-a bg-adaptive">
+        <figure class="moon"></figure>
+        <figure class="tree"></figure>
+        <figure class="cloudy"></figure>
+        <!--男孩-->
+        <div class="chs-boy chs-boy-deer"></div>
+        <!--窗户-->
+        <div class="window">
+            <div class="window-bg"></div>
+            <div class="window-content">
+                <div class="window-left"></div>
+                <div class="window-right"></div>
+            </div>
+        </div>
+    </section>
+    <section class="page-b bg-adaptive">
+        <figure class="cat"></figure>
+        <figure class="girl"></figure>
+        <figure class="christmas-boy-head"></figure>
+        <figure class="christmas-boy boy-walk"></figure>
+        <div id="carousel">
+            <figure id="spinner">
+                <figure>
+                    <img id="img0" src="../images/b/qixi-one.png" />
+                </figure>
+                <figure>
+                    <img id="img1" src="../images/b/qixi-three.png" />
+                </figure>
+                <figure>
+                    <img id="img2" src="../images/b/qixi-two.png" />
+                </figure>
+            </figure>
+        </div>
+    </section>
+    <section class="page-c bg-adaptive">
+        <figure class="moon"></figure>
+        <figure class="tree"></figure>
+        <figure class="cloudy"></figure>
+        <div class="window">
+            <div class="window-content" data-attr="red">
+                <div class="window-scene-bg"></div>
+                <div class="window-close-bg"></div>
+                <div class="window-left hover"></div>
+                <div class="window-right hover"></div>
+            </div>
+        </div>
+        <div class="snow">
+            <canvas id="snowflake"></canvas>
+        </div>
+
+    </section>
+</section>
+
+<!--<select id="page">-->
+    <!--<option value="page-a" selected="">1</option>-->
+    <!--<option value="page-b">2</option>-->
+    <!--<option value="page-c">3</option>-->
+<!--</select>-->
+</body>
+
+<script src="../lib/jquery.js"></script>
+<script src="../lib/jquery.transit.js"></script>
+<script src="js/christmas.js"></script>
+<script src="js/observer.js"></script>
+<script src="js/pageA.js"></script>
+<script src="js/pageB.js"></script>
+<script src="js/pageC.js"></script>
+<script>
+    var config = {} ;
+
+    var docEl = document.documentElement ,
+        resizeEvt = "orientationchange" in window ? "orientationchange" : "resize" ,
+        recalc = function(){
+            config.clientWidth = docEl.clientWidth ;
+            config.clientHeight = config.clientWidth * (900 / 1440) ;
+            docEl.style.fontSize = 20 * (config.clientWidth / 320) + "px" ;
+            $(".container").css("height" , config.clientHeight + "px") ;
+        } ;
+    window.addEventListener(resizeEvt, recalc, false) ;
+    document.addEventListener("DOMContentLoaded", recalc, false) ;
+
+</script>
+</html>

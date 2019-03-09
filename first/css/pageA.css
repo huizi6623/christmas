@@ -1,0 +1,315 @@
+.container .page-a {
+    width  : 100%;
+    height : 100%;
+    background-image: url("../../images/a/page-a-bg.png");
+    position: absolute;
+    z-index: 5;
+}
+
+/**
+ * 页面切换
+ * 镜头方法、淡出
+ */
+
+.page-a.effect-out {
+    -webkit-animation: effectOut 8s ease-in-out forwards;
+    animation: effectOut 8s ease-in-out forwards;
+    transform-origin: 71% 72%;
+}
+
+@keyframes effectOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(20);
+    }
+}
+
+@-webkit-keyframes effectOut{
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(20);
+    }
+}
+
+/*
+圣诞男孩
+*/
+.chs-boy {
+    position: absolute;
+    z-index: 3;
+    top: .1rem;
+    right: -3rem;
+    width: 5rem;
+    height: 1.5rem;
+    background: url("../../images/a/boy-sleigh-car.png") -0% 100%;
+    background-size: 400% 100%;
+    transform: scale(0.1);
+}
+
+/*
+男孩驾车动作
+*/
+.chs-boy-deer {
+    animation: chsBoyDeer .75s infinite steps(3 , end);
+}
+
+@keyframes chsBoyDeer {
+    0% {
+        background-position: -0% 100%;
+    }
+    100% {
+        background-position: -300% 100%;
+    }
+}
+
+@-webkit-keyframes chsBoyDeer {
+    0% {
+        background-position: 0% 100%;
+    }
+    100% {
+        background-position: 300% 100%;
+    }
+}
+
+/*
+人物停止
+*/
+.boy-stop-animation {
+    animation-play-state: paused;
+}
+
+/**
+ * 圣诞树
+ * animation: name duration timing-function delay iteration-count direction;
+*/
+
+.tree {
+    width: 2.71rem;
+    height: 4.24rem;
+    z-index: 15;
+    position: absolute;
+    bottom: 0;
+    left: 1rem;
+    background-image: url("../../images/a/trees.png");
+    background-size: 200% 100%;
+    animation: treeAnim 1s infinite steps(2);
+}
+
+@keyframes treeAnim {
+    0% {
+        background-position: 0% 100%;
+    }
+    100% {
+        background-position: -200% 100%;
+    }
+}
+
+@-webkit-keyframes treeAnim {
+    0% {
+        background-position: 0% 100%;
+    }
+    100% {
+        background-position: -200% 100%;
+    }
+}
+
+.moon {
+    position: absolute;
+    left: 3.3rem;
+    top: .8rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: #FCF0BC;
+    box-shadow: 0 0 1.5rem #FCF0BC;
+    animation: nucleus 1s infinite linear alternate;
+}
+
+@keyframes nucleus {
+    0% {
+        box-shadow: none;
+    }
+    100% {
+        box-shadow: 0 0 1.5rem #FCF0BC;
+    }
+}
+
+@-webkit-keyframes nucleus {
+    0% {
+        box-shadow: none;
+    }
+    100% {
+        box-shadow: 0 0 1.5rem #FCF0BC;
+    }
+}
+
+/*云*/
+.cloudy {
+    background: #60768D;
+    border-radius: 50%;
+    box-shadow: #60768D 1.2rem -0.2rem 0 -0.1rem, #60768D 0.5rem -0.5rem, #60768D 0.8rem 0.2rem,#60768D 1.5rem 0.2rem 0 -0.2rem;
+    height: 1rem;
+    width: 1rem;
+    position: absolute;
+    left: .5rem;
+    top: 1.8rem;
+    z-index: 5;
+    -webkit-animation: cloudy 5s ease-in-out infinite;
+    animation: cloudy 5s ease-in-out infinite;
+}
+@-webkit-keyframes cloudy {
+    50% {
+        -webkit-transform: translateY(-0.1rem);
+    }
+}
+@keyframes cloudy {
+    50% {
+        transform: translateY(-0.1rem);
+    }
+}
+
+
+/**
+ * 窗户
+ */
+
+.window {
+    width: 2.6rem;
+    height: 1.5rem;
+    position: absolute;
+    left: 9.7rem;
+    top: 6.2rem;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.window-content {
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    width: 91%;
+    margin: 0 auto;
+    height: 100%;
+    overflow: hidden;
+    -webkit-perspective: 500px;
+    perspective: 500px;
+}
+
+
+/**
+ * 窗户背景
+ */
+
+.window-bg {
+    width: 90%;
+    height: 96%;
+    position: absolute;
+    left: 50%;
+    margin-left: -45%;
+    bottom: 0;
+    background: url("../../images/a/page-a-window-bg.png");
+    background-size: 100% 100%;
+    z-index: -1;
+}
+
+
+/**
+ * 窗户底边
+ * @type {[type]}
+ */
+
+.window:before {
+    content: "";
+    background: url("../../images/a/window-bottom.png");
+    width: 100%;
+    height: 0.17rem;
+    display: block;
+    position: absolute;
+    bottom: 0.05rem;
+    background-size: 100% 100%;
+    z-index: 100;
+}
+
+
+/**
+ * 底边阴影
+ * @type {[type]}
+ */
+
+.window:after {
+    content: "";
+    background: url("../../images/a/window-bottom-shadow.png");
+    width: 100%;
+    height: 0.09rem;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    background-size: 100% 100%;
+    z-index: 100;
+}
+
+.wood {
+    display: block;
+    overflow: hidden;
+}
+
+
+/**
+ * 左侧门
+ */
+
+.window-left {
+    float: left;
+    background: url("../../images/a/window-left.png");
+    -webkit-border-top-left-radius: 0.1rem;
+    border-top-left-radius: 0.1rem;
+}
+
+
+/**
+ * 右侧门
+ */
+
+.window-right {
+    float: right;
+    background: url("../../images/a/window-right.png");
+    -webkit-border-top-right-radius: 0.1rem;
+    border-top-right-radius: 0.1rem;
+}
+
+.window-left,
+.window-right {
+    width: 1.17rem;
+    height: 1.4rem;
+    z-index: 90;
+    box-shadow: 0 0 0.15rem #FCF0BC;
+    background-size: 100% 100%;
+}
+
+/**
+ * 动画过程
+ */
+
+.window-transition {
+    -webkit-transition: 2s ease-in-out;
+    transition: 2s ease-in-out;
+}
+
+.window-left.hover {
+    transform-origin: left;
+    transform: rotateY(50deg) scale(0.95);
+    top: 0.1rem;
+    left: -0.25rem;
+}
+
+.window-right.hover {
+    transform-origin: right;
+    transform: rotateY(-50deg) scale(0.95);
+    top: 0.1rem;
+    left: -0.25rem;
+}
